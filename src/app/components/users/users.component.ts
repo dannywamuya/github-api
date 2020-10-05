@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from 'src/app/services/search.service';
+import { userURL } from 'src/app/models/user-url';
 
 @Component({
   selector: 'app-users',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
+  users:userURL[];
+
+  constructor(public search: SearchService) { }
 
   ngOnInit(): void {
+    this.searchUsers("dannywamuya");
+  }
+
+  searchUsers(searchTerm){
+    this.search.searchUser(searchTerm).then(
+      ()=>{
+        this.users=this.search.users;
+        console.log(this.users);
+      },
+      (error)=>{
+        console.log(error)
+      }
+    )
   }
 
 }
