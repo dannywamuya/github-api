@@ -1,4 +1,4 @@
-export class Github {
+export class userURL {
     constructor(
         public url:string){}
 }

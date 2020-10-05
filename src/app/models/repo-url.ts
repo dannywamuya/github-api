@@ -1,3 +1,3 @@
-export class Gitrepo {
+export class repoURL {
     constructor( public url:string,){}
 }
