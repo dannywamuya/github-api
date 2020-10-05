@@ -8,6 +8,7 @@ import { repoURL } from 'src/app/models/repo-url';
   styleUrls: ['./repositories.component.css']
 })
 export class RepositoriesComponent implements OnInit {
+  
   repos:repoURL;
 
   constructor(public search: SearchService) { }
@@ -21,7 +22,6 @@ export class RepositoriesComponent implements OnInit {
       ()=>{
         this.repos=this.search.repos;
         console.log(this.repos);
-
       },
       (error)=>{
         console.log(error)

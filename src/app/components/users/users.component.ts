@@ -8,7 +8,7 @@ import { userURL } from 'src/app/models/user-url';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-
+  
   users:userURL[];
 
   constructor(public search: SearchService) { }
