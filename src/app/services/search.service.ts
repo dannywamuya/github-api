@@ -9,7 +9,7 @@ import { Repo } from 'src/app/models/repository';
 @Injectable({
   providedIn: 'root'
 })
-export class Search {
+export class SearchService {
 
   users: userURL[];
   repos: repoURL;

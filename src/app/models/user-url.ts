@@ -1,4 +1,3 @@
 export class userURL {
-    constructor(
-        public url:string){}
+    constructor( public url : string ){}
 }

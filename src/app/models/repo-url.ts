@@ -1,3 +1,3 @@
 export class repoURL {
-    constructor( public url:string,){}
+    constructor( public url : string ){}
 }
