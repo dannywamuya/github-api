@@ -17,22 +17,12 @@ export class SearchService {
   constructor(private http: HttpClient) { }
 
   searchUser(searchTerm: string) {
-    interface data {
-      login: string;
-      username: string;
-      avatar: string;
-      html_url: string;
-      name: string;
-      url: string;
-    }
-  
     let promise = new Promise((resolve, reject) => {
 
       this.http.get<any>('https://api.github.com/users/' + searchTerm + '?access_token=' + environment.apiKey).toPromise().then(
         (results) => {
           this.users = [];
           this.users.push(results);
-          console.log(results)
           resolve()
         },
         (error) => {

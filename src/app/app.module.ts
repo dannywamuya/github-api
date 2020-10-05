@@ -7,18 +7,22 @@ import { RepositoriesComponent } from './components/repositories/repositories.co
 import { UsersComponent } from './components/users/users.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormComponent } from './components/form/form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     RepositoriesComponent,
     UsersComponent,
-    HeaderComponent
+    HeaderComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

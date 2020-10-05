@@ -1,5 +1,4 @@
 export class userURL {
-    
     constructor( 
         public url : string,
         public login : any,

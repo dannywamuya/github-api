@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { SearchService } from 'src/app/services/search.service';
 import { userURL } from 'src/app/models/user-url';
-import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-users',
@@ -9,26 +8,25 @@ import { User } from 'src/app/models/user';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+  users : userURL[];
+
+  constructor(private search: SearchService) { }
   
-  users:userURL[];
-  // profiles:User;
-
-  constructor(public search: SearchService) { }
-
   ngOnInit(): void {
-    this.searchUsers("dannywamuya");
+    this.searchUsers('dannywamuya');
   }
-
-  searchUsers(searchTerm){
+  
+  searchUsers(searchTerm:string){
+    
     this.search.searchUser(searchTerm).then(
       ()=>{
-        this.users=this.search.users;
-        console.log(this.users);
+        this.users = this.search.users;
       },
       (error)=>{
         console.log(error)
       }
     )
   }
+
 
 }
