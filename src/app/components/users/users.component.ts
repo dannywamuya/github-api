@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from 'src/app/services/search.service';
 import { userURL } from 'src/app/models/user-url';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-users',
@@ -10,6 +11,7 @@ import { userURL } from 'src/app/models/user-url';
 export class UsersComponent implements OnInit {
   
   users:userURL[];
+  // profiles:User;
 
   constructor(public search: SearchService) { }
 

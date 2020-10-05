@@ -28,7 +28,7 @@ export class SearchService {
   
     let promise = new Promise((resolve, reject) => {
 
-      this.http.get<data>('https://api.github.com/users/' + searchTerm + '?access_token=' + environment.apiKey).toPromise().then(
+      this.http.get<any>('https://api.github.com/users/' + searchTerm + '?access_token=' + environment.apiKey).toPromise().then(
         (results) => {
           this.users = [];
           this.users.push(results);

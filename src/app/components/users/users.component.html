@@ -1,1 +1,21 @@
-<p>users works!</p>
+<div *ngFor="let user of users">
+    <div class="card" style="width: 18rem;">
+        <img src="{{user.avatar_url}}" width="300" height="300">
+        <div class="card-body">
+            <h5 class="card-title">{{ user.name }}</h5>
+        </div>
+        <div>
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item">Username: &nbsp; {{ user.login }}</li>
+            <li class="list-group-item">Public Repos:&nbsp; {{ user.public_repos }}</li>
+            <li class="list-group-item">Followers:&nbsp; {{ user.followers}}</li>
+            <li class="list-group-item">Following:&nbsp;{{ user.following }}</li>
+            <li class="list-group-item">Location:&nbsp;{{ user.location }}</li>
+            <li class="list-group-item">Join Date:&nbsp; {{ user.created_at | date }}</li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <a href="{{ user.html_url }}" class="card-link" target="_blank" class="btn btn-primary">View Github Profile</a>
+        </div>
+    </div>
+</div>
