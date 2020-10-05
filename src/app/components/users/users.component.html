@@ -1,25 +1,53 @@
-<div class="container">
-    <!-- Card with Profile Detais -->
-    <app-form (emitSearch)="searchUsers($event)"></app-form>
-    <div *ngFor="let user of users">
-       <div class="card container" style="width: 18rem;">
-            <img src="{{user.avatar_url}}" width="250" height="250">
-            <div class="card-body">
-                <h5 class="card-title">{{ user.name }}</h5>
+<div>
+    <div class="container">
+        <app-form (emitSearch)="searchUsers($event)" (emitSearch)="searchRepos($event)"></app-form>
+        
+        <!-- Card with Profile Detais -->
+
+        <div *ngFor="let user of users">
+            <div class="card container" style="width: 18rem;">
+                <img src="{{ user.avatar_url }}" width="250" height="250">
+                <div class="card-body">
+                    <h5 class="card-title">{{ user.name }}</h5>
+                </div>
+                <div>
+                    <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Username: &nbsp; {{ user.login }}</li>
+                    <li class="list-group-item">Public Repos:&nbsp; {{ user.public_repos }}</li>
+                    <li class="list-group-item">Followers:&nbsp; {{ user.followers}}</li>
+                    <li class="list-group-item">Following:&nbsp;{{ user.following }}</li>
+                    <li class="list-group-item">Location:&nbsp;{{ user.location }}</li>
+                    <li class="list-group-item">Join Date:&nbsp; {{ user.created_at | date }}</li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <a href="{{ user.html_url }}" class="card-link" target="_blank" class="btn btn-primary">View Github Profile</a>
+                </div>
             </div>
-            <div>
-                <ul class="list-group list-group-flush">
-                <li class="list-group-item">Username: &nbsp; {{ user.login }}</li>
-                <li class="list-group-item">Public Repos:&nbsp; {{ user.public_repos }}</li>
-                <li class="list-group-item">Followers:&nbsp; {{ user.followers}}</li>
-                <li class="list-group-item">Following:&nbsp;{{ user.following }}</li>
-                <li class="list-group-item">Location:&nbsp;{{ user.location }}</li>
-                <li class="list-group-item">Join Date:&nbsp; {{ user.created_at | date }}</li>
-                </ul>
-            </div>
-            <div class="card-body">
-                <a href="{{ user.html_url }}" class="card-link" target="_blank" class="btn btn-primary">View Github Profile</a>
-            </div>
+        </div>
+    </div>
+
+    <div>
+        <!-- Details of Repositories -->
+        <div *ngFor="let repo of repos">
+            <div class="card container" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ repo.name }}</h5>
+                </div>
+                <div>
+                    <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Create By: &nbsp; {{ repo.owner.login }}</li>
+                    <li class="list-group-item">Description: &nbsp; {{ repo.description }}</li>
+                    <li class="list-group-item">Created At:&nbsp; {{ repo.created_at | date }}</li>
+                    <li class="list-group-item">Language:&nbsp; {{ repo.language }}</li>
+                    <!-- <li class="list-group-item">Following:&nbsp;{{ repo.following }}</li>
+                    <li class="list-group-item">Location:&nbsp;{{ repo.location }}</li>
+                    <li class="list-group-item">Join Date:&nbsp; {{ repo.created_at | date }}</li> -->
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <a href="{{ repo.html_url }}" class="card-link" target="_blank" class="btn btn-primary">View on GitHub</a>
+                </div>
         </div>
     </div>
 </div>

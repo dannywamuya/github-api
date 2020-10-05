@@ -3,8 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { userURL } from 'src/app/models/user-url';
 import { repoURL } from 'src/app/models/repo-url';
-import { User } from 'src/app/models/user';
-import { Repo } from 'src/app/models/repository';
 
 @Injectable({
   providedIn: 'root'
@@ -49,7 +47,6 @@ export class SearchService {
         (results) => {
           this.repos;
           this.repos = results;
-          console.log(results)
           resolve()
         },
         (error) => {
