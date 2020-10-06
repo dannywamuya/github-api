@@ -1,6 +1,14 @@
-# GithubAPI
+# Author 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
+Daniel Wamuya
+
+# GitHub Finder
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1. It is an application that allows users to find github accounts and view the repositories from the account.
+
+## Live link
+
+https://dannywamuya.github.io/github-api/
 
 ## Development server
 
@@ -25,3 +33,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## License
+*{MIT License}* *{https://mit-license.org/}*
+Copyright (c) {2020} **{Daniel Wamuya}**
