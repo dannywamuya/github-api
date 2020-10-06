@@ -34,6 +34,7 @@
                     <ul>
                         <li><i class="fas fa-map-marker-alt"></i> {{ user.location }}</li>
                         <li><i class="fas fa-quote-left"></i> "{{ user.bio }}"</li>
+                        <li><i class="fab fa-github-alt"></i> {{ user.public_repos }} Repositories</li>
                         <li><i class="fas fa-calendar"></i> {{ user.created_at | date: "mediumDate" }}</li>
                     </ul>
                 </div>  
