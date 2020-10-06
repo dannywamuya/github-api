@@ -1,4 +1,143 @@
 *{
-    background-color: white;
+    /* background-color: white; */
     color: black;
 }
+
+.profile-container .profile-content {
+    width: 100%;
+    height: 67vh;
+    float: right;
+    background: #fff;
+    box-shadow: 0 0px 25px rgba(0, 0, 0, 0.2);
+}
+.profile-container .profile-content .actions {
+    width: 100%;
+    background: linear-gradient(to right, #e48418 0%, #ffd900 100%);
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    padding: 20px 0 0px 0;
+}
+.profile-container .profile-content .actions i {
+    padding-left: 20px;
+    float: left;
+    font-size: 20px;
+}
+.profile-container .profile-content .actions i:hover {
+    opacity: 0.8;
+}
+.profile-container .profile-content .actions i + i {
+    padding-right: 20px;
+    float: right;
+}
+.profile-container .profile-content .pic {
+    background: linear-gradient(to right, #e48418 0%, #ffd900 100%);
+    text-align: center;
+    color: #fff;
+    padding: 0px 0px 20px 0px;
+}
+.profile-container .profile-content .pic img {
+    width: 12%;
+    border-radius: 50%;
+    padding: 2% 0 ;
+}
+.profile-container .profile-content .pic img:hover {
+    opacity: 0.8;
+}
+.profile-container .profile-content .pic h2 {
+    font-size: 17px;
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+}
+.profile-container .profile-content .pic span {
+    font-size: 15px;
+    font-weight: 300;
+}
+.profile-container .profile-content .summary {
+    color: #fff;
+}
+.profile-container .profile-content .summary .content {
+    width: 50%;
+    float: left;
+    text-align: center;
+    display: block;
+    background: linear-gradient(to right, #e48418 0%, #ffd900 100%);
+    padding: 10px 0;
+}
+.profile-container .profile-content .summary .content span {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+}
+.profile-container .profile-content .profile-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #929292;
+}
+.profile-container .profile-content .profile-details ul li {
+    line-height: 50px;
+    border-bottom: 1px solid #f2f2f2;
+    font-weight: 400;
+    padding-left: 30px;
+    font-size: 15px;
+}
+.profile-container .profile-content .profile-details ul li:hover i {
+    color: #056cc6;
+}
+.profile-container .profile-content .profile-details ul li i {
+    margin-right: 10px;
+}
+.profile-container .profile-content .profile-details ul li span {
+    float: right;
+    font-weight: 500;
+}
+.profile-container .profile-content .profile-details ul li span:after {
+    content: '\f054';
+    font-family: 'FontAwesome';
+    font-size: 12px;
+    float: right;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.repos-class .row .column {
+    width: 25%;
+    float: left;
+    text-align: center;
+    padding: 0px 10px;
+}
+
+.repos-class .row .column img {
+    align-self: center;
+}
+
+.repos-class .repo-title {
+    text-align: center;
+}
+
+.repos-class .row ::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+@media screen and(max-width:600px)
+    {
+        .repos-class .row .column{
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+        .repos-class .row .column .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: auto;
+            background-color: white;
+            text-align: center;
+            border-radius: 5%;
+            padding-bottom: 15px;
+        }

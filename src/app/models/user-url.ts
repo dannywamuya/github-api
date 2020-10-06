@@ -10,5 +10,6 @@ export class userURL {
         public created_at : any,
         public location : any,
         public avatar_url  : any,
+        public bio: any,
     ){}
 }
