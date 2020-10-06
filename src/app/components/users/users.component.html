@@ -1,123 +1,66 @@
-<div class="nav">
+<div class="nav container">
     <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="index.html">GitHub Find</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav" class="links">
-          <ul class="navbar-nav">
-          </ul>
-        </div>
+        <a class="navbar-brand" href="index.html">GitHub Finder</a>
         <div class="search">
             <app-form (emitSearch)="searchUsers($event)" (emitSearch)="searchRepos($event)"></app-form>
         </div>
     </nav>
 </div>
 
-<div>
-    <div class="container">
-        
-        <!-- Card with Profile Detais 
-
-        <div *ngFor="let user of users">
-            <div class="card" style="width: 251px;">
-                <img src="{{ user.avatar_url }}" width="250" height="250">
-                <div class="card-body">
-                    <h5 class="card-title">{{ user.name }}</h5>
-                </div>
-                <div>
-                    <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Username: &nbsp; {{ user.login }}</li>
-                    <li class="list-group-item">Public Repos:&nbsp; {{ user.public_repos }}</li>
-                    <li class="list-group-item">Followers:&nbsp; {{ user.followers}}</li>
-                    <li class="list-group-item">Following:&nbsp;{{ user.following }}</li>
-                    <li class="list-group-item">Location:&nbsp;{{ user.location }}</li>
-                    <li class="list-group-item">Join Date:&nbsp; {{ user.created_at | date }}</li>
-                    </ul>
-                </div>
-                <div class="card-body">
-                    <a href="{{ user.html_url }}" class="card-link" target="_blank" class="btn btn-primary">View GitHub Profile</a>
-                </div>
-            </div>
-        </div> -->
-
-        <!-- Details of Repositories 
-        
-        <div *ngFor="let repo of repos">
-            <div class="card" style="width: 251px;">
-                <div class="card-body">
-                    <h5 class="card-title">{{ repo.name }}</h5>
-                </div>
-                <div>
-                    <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Create By: &nbsp; {{ repo.owner.login }}</li>
-                    <li class="list-group-item">Description: &nbsp; {{ repo.description }}</li>
-                    <li class="list-group-item">Created At:&nbsp; {{ repo.created_at | date }}</li>
-                    <li class="list-group-item">Language:&nbsp; {{ repo.language }}</li>
-                    </ul>
-                </div>
-                <div class="card-body">
-                    <a href="{{ repo.html_url }}" class="card-link" target="_blank" class="btn btn-primary">View on GitHub</a>
-                </div>
-            </div>
-        </div> -->
-    </div>
-</div> 
-
-
 <div class="container">
     
     <!-- Profile -->
+
     <div class="profile-container" *ngFor='let user of users'>
         <div class="profile-content">
-            <div class="actions">
-          <i class="fa fa-cog"></i>
-          <i class="fa fa-bell"></i>
+            
+            <div class="pic">
+                <div class="image-container">
+                   <a href="{{ user.html_url }}" target="_blank"><img src="{{ user.avatar_url }}" alt="" ></a>
+                </div>
+                <a href="{{ user.html_url }}" target="_blank" style="text-decoration: none;"><h2 style="font-weight: bold; margin-bottom: 5px;">{{ user.name }}</h2></a>
+                <p style="font-size: 14px;">@{{ user.login }}</p>
+            </div>
+            <div class="summary">
+                <div class="content">
+                    <span>{{ user.followers }}</span>
+                    <span>Followers</span>
+                </div>
+                <div class="content">
+                    <span>{{ user.following }}</span>
+                    <span>Following</span>
+                </div>
+                <div class="profile-details">
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> {{ user.location }}</li>
+                        <li><i class="fas fa-quote-left"></i> "{{ user.bio }}"</li>
+                        <li><i class="fas fa-calendar"></i> {{ user.created_at | date: "mediumDate" }}</li>
+                    </ul>
+                </div>  
+            </div>   
         </div>
-        <div class="pic">
-            <div class="image-container">
-                <img src="{{ user.avatar_url }}" alt="" >
-            </div>
-        <h2>{{ user.name }}</h2>
-        <span>{{ user.location }}</span>
-        <div style="font-size: 14px;">
-            <p>{{ user.bio }}</p>
-            </div>
-        </div>
-        <div class="summary">
-            <div class="content">
-                <span>{{ user.followers }}</span>
-                <span>Followers</span>
-            </div>
-            <div class="content">
-                <span>{{ user.following }}</span>
-                <span>Following</span>
-            </div>
-            <div class="profile-details">
-                <ul>
-                    <li><i class="fa fa-images"></i>Shots<span>35</span></li>
-                    <li><i class="fa fa-heart"></i>Likes<span>236</span></li>
-                    <li><i class="fa fa-video"></i>Videos<span>26</span></li>
-                    <li><i class="fa fa-tags"></i>Tags<span>100</span></li>
-                </ul>
-            </div>  
-        </div>    
     </div>
-    
-    <!-- Repos -->
+</div>
+
+<!-- Repos -->
+
+<div class="container">
+    <div class="repo-title" style="padding-bottom: 1%;">
+        <h3>Repositories</h3>
+    </div>
     <div class="repos-class">
-        <div class="repo-title">
-            <h3>Repositories</h3>
-        </div>
-        <div class="row container" *ngFor='let repo of repos'>
-            <div class="column">
-                <div class="card">
-                    <img src="../../../assets/ghlogo.png" alt="" style="width: 150px; height: auto; padding-top: 10px;">
-                    <p>{{ repo.name }}</p>
-                    <p>by: {{ repo.owner.login }}</p>
-                    <p>date: {{ repo.created_at | date }}</p>
-                    <p>language: {{ repo.language }}</p>
-                    <a href="{{ repo.html_url }}" class="card-link" target="_blank" class="btn btn-primary" style="width: 90%;align-self: center;">View <i class="fa fa-github" aria-hidden="true"></i></a>
+        <div class="repo-card container" >
+            <div class="grid">
+                <div class="card" *ngFor='let repo of repos'>
+                    <a href="{{ repo.html_url }}" class="card-link" target="_blank"><img src="../../../assets/ghlogo.png" alt="" style="width: 150px; height: auto; padding-top: 10px;"></a>
+                    <p style="font-weight:bold;">{{ repo.name }}</p>
+                    <p>by: <strong>{{ repo.owner.login }}</strong></p>
+                    <p>language: <strong>{{ repo.language }}</strong></p>
+                    <p><strong>{{ repo.created_at | date: 'mediumDate' }}</strong></p>
+                    <div style="background: #00B4D8; padding: 5px 0;">
+                        <span style="margin: 0 10%;" class="label label-default"><i class="far fa-star"></i> {{repo.watchers}} </span>
+                        <span style="margin: 0 10%;" class="label label-primary"><i class="fas fa-code-branch"></i> {{repo.forks}} </span>
+                    </div>
                 </div>
             </div>
         </div>

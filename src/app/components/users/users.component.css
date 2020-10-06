@@ -5,39 +5,19 @@
 
 .profile-container .profile-content {
     width: 100%;
-    height: 67vh;
+    height: 100%;
     float: right;
     background: #fff;
     box-shadow: 0 0px 25px rgba(0, 0, 0, 0.2);
 }
-.profile-container .profile-content .actions {
-    width: 100%;
-    background: linear-gradient(to right, #e48418 0%, #ffd900 100%);
-    height: 40px;
-    line-height: 40px;
-    color: #fff;
-    padding: 20px 0 0px 0;
-}
-.profile-container .profile-content .actions i {
-    padding-left: 20px;
-    float: left;
-    font-size: 20px;
-}
-.profile-container .profile-content .actions i:hover {
-    opacity: 0.8;
-}
-.profile-container .profile-content .actions i + i {
-    padding-right: 20px;
-    float: right;
-}
 .profile-container .profile-content .pic {
-    background: linear-gradient(to right, #e48418 0%, #ffd900 100%);
+    background: linear-gradient(to right, #023E8A 0%, #00B4D8 100%);
     text-align: center;
     color: #fff;
     padding: 0px 0px 20px 0px;
 }
 .profile-container .profile-content .pic img {
-    width: 12%;
+    width: 17%;
     border-radius: 50%;
     padding: 2% 0 ;
 }
@@ -47,8 +27,8 @@
 .profile-container .profile-content .pic h2 {
     font-size: 17px;
     padding: 0;
-    margin: 0;
     font-weight: 400;
+
 }
 .profile-container .profile-content .pic span {
     font-size: 15px;
@@ -62,7 +42,7 @@
     float: left;
     text-align: center;
     display: block;
-    background: linear-gradient(to right, #e48418 0%, #ffd900 100%);
+    background: linear-gradient(to right, #023E8A 0%, #00B4D8 100%);
     padding: 10px 0;
 }
 .profile-container .profile-content .summary .content span {
@@ -102,42 +82,41 @@
     margin-left: 20px;
 }
 
-.repos-class .row .column {
-    width: 25%;
-    float: left;
+.repos-class .repo-card .grid {
     text-align: center;
-    padding: 0px 10px;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
-.repos-class .row .column img {
+.repos-class{
+    font-size: 14px;
+}
+ 
+.repos-class .repo-card .grid img {
     align-self: center;
 }
 
-.repos-class .repo-title {
+.repo-title {
     text-align: center;
 }
 
-.repos-class .row ::after{
-    content: "";
-    display: table;
-    clear: both;
+.repos-class .repo-card .grid .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 3%;
+    padding-bottom: 15px;
+} 
+
+@media screen and (max-width: 768px) {
+    
+    .profile-container .profile-content .pic img{
+        width: 35%;
+    }
+
 }
 
-
-@media screen and(max-width:600px)
-    {
-        .repos-class .row .column{
-            width: 100%;
-            display: block;
-            margin-bottom: 20px;
-        }
+@media only screen and (min-width: 600px) {
+    .profile-container .profile-content .pic img{
+        width: 20%;
     }
-        .repos-class .row .column .card {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            max-width: 300px;
-            margin: auto;
-            background-color: white;
-            text-align: center;
-            border-radius: 5%;
-            padding-bottom: 15px;
-        }
+}
